@@ -20,7 +20,22 @@
 
   <!-- Custom styles for this template -->
   <link href="css/grayscale.min.css" rel="stylesheet">
-
+   <!-- <link href="css//mycss.css" rel="stylesheet">-->
+    
+    <style>
+        .dropdown-menu{
+            background: none!important;
+            border: none!important;
+            padding: .5rem 0;
+            min-width: 15rem;
+        }
+        
+        #mainNav.navbar-shrink .dropdown-menu{
+            background-color: #fff!important;
+            border-radius: 0!important;
+        }
+    </style>
+    
 </head>
 
 <body id="page-top">
@@ -35,9 +50,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#page-top">Products</a>   
-            </li>
+        
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#service">Services</a>
             </li>
@@ -47,20 +60,41 @@
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#signup">Contact</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#">Login</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle nav-link js-scroll-trigger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
+              <ul class="dropdown-menu nav-item">
+                <li><a href="#" class="nav-link js-scroll-trigger">Action</a></li>
+                <li><a href="#" class="nav-link js-scroll-trigger">Another action</a></li>
+                <li><a href="#" class="nav-link js-scroll-trigger">Something else here</a></li>
+                <li><a href="#" class="nav-link js-scroll-trigger">Separated link</a></li>
+              </ul>
+            </li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Header -->
-  <header class="masthead">
-    <div class="container d-flex h-100 align-items-center">
-      <div class="mx-auto text-center">
-        <h1 class="mx-auto my-0 text-uppercase">Alpha Security Solutions</h1>
-        <h2 class="text-white-50 mx-auto mt-2 mb-5">Simple.Safe.Secure.</h2>
-      </div>
-    </div>
-  </header>
+          <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+              <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Alpha Security Solutions</h1>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5">Simple.Safe.Secure.</h2>
+                <form name="login" action="login.php" method="post">
+                    <input type="text" name="username" placeholder="Username" required autocomplete="off">
+                    <input type="password" name="password" placeholder="Password" required><br>
+                    <input type="reset">
+                    <input type="submit" name="login">
+                </form>
+              </div>
+              </div>
+              <div>
+
+              </div>
+          </header>
 
   <!-- Service Section -->
   <section id="service" class="about-section text-center">
@@ -250,6 +284,13 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/grayscale.min.js"></script>
+    <script>
+        $('document').ready(function(){
+            $('.dropdown').hover(function(){
+                $('.dropdown').trigger('click');
+            })
+        });
+    </script>
 
 </body>
 
